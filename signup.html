@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="login-box">
+   
+        <form>
+            
+           <input type="text" placeholder="Full Name:-" id="fname" class="input-box">
+          
+           <input type="text" placeholder="E-mail Address:-" id="email" class="input-box">
+
+           <input type="text" placeholder="Phone No:-" id="phno" class="input-box">
+
+           <input type="date" placeholder="Date of Birth:-" id="dob" class="input-box">
+
+           <input type="text" placeholder="Username:-" id="uname" class="input-box">
+
+            <input type="password" name="password" id="pas" placeholder="Password:-">
+            <a href="login.html">Already have an Account?</a>
+            <input type="button" value="SignUp" class="button" onclick="validate()">
+   
+        </form>
+         
+        </div>
+   
+       </div>
+   
+   <script>
+   function validate()
+   {
+       var fname=document.getElementById('fname');
+       var email=document.getElementById('email');
+       var phno=document.getElementById('phno');
+       var dob=document.getElementById('dob');
+       var uname=document.getElementById('uname');
+       var pas=document.getElementById('pas');
+      
+       var regex=/^([a-zA-Z0-9]+)\@([a-zA-Z]+)\.([a-zA-Z]{2,3})$/;
+
+       if(common(fname,"full name"))
+       if(!regex.test(email.value))
+       {
+         alert("invalid email");
+         email.focus();
+       }
+       else
+       if(common(phno,"phone number"))
+       {
+       if(phno.length<10)
+       alert("invalid phone number");
+       else
+       {
+       if(dob.value=="")
+       alert("invalid date of birth");
+       else
+       if(common(uname,"username"))
+         common(pas,"password");
+       }
+       }
+   }
+
+   function common(temp,msg)
+   {
+       if(temp.value.length<=0)
+       {
+       alert("please enter "+msg);
+       temp.focus();
+       } 
+       else
+       return true;
+   }
+   
+   </script>
+</body>
+</html>

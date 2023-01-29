@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+   
+    <div class="login-box">
+   
+     <form>
+         <label>Username:-</label>
+        <input type="text" placeholder="Username" id="uname" class="input-box">
+         <label>Password:-</label>
+         <input type="password" name="password" id="pas" placeholder="Password">
+         <a href="#">Forget Password ?</a> <br>
+         <a href="signup.html">Don't have an Account?</a>
+         <input type="button" value="SignIn" class="button" onclick="validate()">
+
+     </form>
+      
+     </div>
+
+    </div>
+
+<script>
+function validate()
+{
+    var uname=document.getElementById('uname');
+    var pas=document.getElementById('pas');
+
+    if(uname.value.length<=0) 
+    {
+    alert("please enter your username");
+    uname.focus();
+    }
+    else
+    if(pas.value.length<=0)
+    {
+    alert("please enter you password");
+    pas.focus();
+    }
+}
+
+</script>
+
+</body>
+</html>
